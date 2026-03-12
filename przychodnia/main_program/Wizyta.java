@@ -32,5 +32,9 @@ public class Wizyta {
     @ManyToOne             
     @JoinColumn(name = "lekarz_id")
     private Lekarz lekarz;
+    
+    
+    @OneToOne(mappedBy = "wizyta")
+    private Karta_Informacyjna karta_informacyjna; // Relacja zwrotna
 
 }
