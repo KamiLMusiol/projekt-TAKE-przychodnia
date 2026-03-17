@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity                     // Informuje JPA, że ta klasa to tabela w bazie danych [cite: 216]
+@Entity                     
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
