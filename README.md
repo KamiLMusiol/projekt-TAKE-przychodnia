@@ -1,13 +1,20 @@
 # projekt-TAKE-przychodnia
+---
+
+## Specyfikacje
+* **Języki** - `Java`
+* **Technologie** `Spring Tool Suite 5, Lombok`
+* **Diagramy** `Klas - draw.io` 
 
 ---
 
-## oprocentowanie 
+## Oprocentowanie 
 wprowadzenie do TAKE, strona wyliczająca oprocentowanie
 
 ---
 
-###  Architektura
+##  Architektura
+### Oprocentowanie
 * **Interfejs** (`Interfejs_Oprocentowanie`) – definicja metody obliczeniowej.
 * **Implementacja** (`Oprocentowanie`) – logika matematyczna.
 * **Kontroler** (`Controller_Class`) – punkt styku z użytkownikiem (REST API).
