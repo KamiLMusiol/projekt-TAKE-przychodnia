@@ -29,3 +29,10 @@ Diagramy zostały wykonane z pomocą technologii: draw.io.
 * **Wizyta**: Centralny punkt systemu łączący pacjenta, lekarza, czas, miejsce (gabinet) oraz dokumentację medyczną (karta i zdiagnozowane choroby).
 * **Specjalizacja**: Klasa opisująca lekarza. Jeden lekarz może posiadać wiele specjalizacji.
 
+---
+
+## Zrzuty diagramów
+
+
+
+![Diagram klas](klas/diagram.jpg)
