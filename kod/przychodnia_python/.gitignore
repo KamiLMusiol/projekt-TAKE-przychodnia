@@ -1,0 +1,13 @@
+# IDE
+.idea/
+
+# Python cache
+**/__pycache__/
+*.py[cod]
+
+# Build i Dist (pliki binarne i instalacyjne)
+build/
+dist/
+
+# Specyfikacja PyInstallera
+*.spec

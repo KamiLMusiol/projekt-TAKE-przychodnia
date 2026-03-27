@@ -1,6 +1,7 @@
 import requests
 from Generator import GeneratorDanych
 
+
 class AkcjaGenerowanie:
 
 
@@ -31,23 +32,26 @@ class AkcjaGenerowanie:
 
     #kolejnosc ma znaczenie!
     def eksportuj(self, liczba_pacjentow:int = 10, liczba_lekarzy:int = 5, liczba_wizyt:int = 20):
+
+
+
         gen = GeneratorDanych()
     
     
         specjalizacje = gen.generuj_dane_specjalizacja()
-        self.wyslij_dane("specjalizacje/python", specjalizacje)
+        self.wyslij_dane("specjalizacja/python", specjalizacje)
     
         choroby = gen.generuj_dane_choroby()
-        self.wyslij_dane("choroby/python", choroby)
+        self.wyslij_dane("choroba/python", choroby)
     
         pacjenci = gen.generuj_dane_pacjent(liczba_pacjentow)
-        self.wyslij_dane("pacjenci/python", pacjenci)
+        self.wyslij_dane("pacjent/python", pacjenci)
     
         lekarze = gen.generuj_dane_lekarz(liczba_lekarzy)
-        self.wyslij_dane("lekarze/python", lekarze)
+        self.wyslij_dane("lekarz/python", lekarze)
     
     
         wizyty = gen.generuj_dane_wizyta(liczba_wizyt, max_lekarz_id=liczba_lekarzy, max_pacjent_id=liczba_pacjentow)
-        self.wyslij_dane("wizyty/python", wizyty)
+        self.wyslij_dane("wizyta/python", wizyty)
 
 

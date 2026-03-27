@@ -1,5 +1,5 @@
 import json
-
+from Generator import GeneratorDanych
 
 
 def show_as_json(nazwa, dane):

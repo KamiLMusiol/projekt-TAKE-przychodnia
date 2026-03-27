@@ -1,0 +1,30 @@
+Nadciśnienie tętnicze,Trwałe podwyższenie ciśnienia krwi powyżej 140/90 mmHg prowadzące do uszkodzeń naczyń.
+Cukrzyca typu 2,Zaburzenie metaboliczne cechujące się opornością na insulinę i wysokim poziomem glukozy.
+Grypa sezonowa,Ostra choroba zakaźna układu oddechowego wywołana przez wirusy grypy typu A lub B.
+Astma oskrzelowa,Przewlekłe zapalenie dróg oddechowych objawiające się napadami duszności i kaszlu.
+Choroba wieńcowa,Niedokrwienie serca spowodowane zwężeniem tętnic wieńcowych przez blaszki miażdżycowe.
+Niedoczynność tarczycy,Stan niedoboru hormonów tarczycy skutkujący spowolnieniem procesów metabolicznych.
+Migrena,Napadowy silny ból głowy z towarzyszącymi nudnościami i nadwrażliwością na bodźce.
+Choroba Alzheimera,Postępująca choroba neurodegeneracyjna prowadząca do zaników pamięci i otępienia.
+Padaczka,Zaburzenie neurologiczne charakteryzujące się występowaniem nagłych wyładowań w mózgu.
+Miażdżyca,Proces zapalny tętnic prowadzący do ich stwardnienia i ograniczenia przepływu krwi.
+Osteoporoza,Choroba szkieletu cechująca się obniżoną gęstością kości i zwiększoną podatnością na złamania.
+Reumatoidalne zapalenie stawów,Autoimmunologiczna choroba zapalna prowadząca do zniszczenia i deformacji stawów.
+Choroba Crohna,Przewlekłe zapalenie przewodu pokarmowego mogące prowadzić do owrzodzeń i zwężeń jelit.
+Łuszczyca,Przewlekła zapalna choroba skóry objawiająca się występowaniem łuszczących się wykwitów.
+Borelioza,Wieloukładowa choroba zakaźna przenoszona przez kleszcze wywołana przez bakterie Borrelia.
+Jaskra,Schorzenie prowadzące do uszkodzenia nerwu wzrokowego i postępującej utraty pola widzenia.
+Niewydolność serca,Stan w którym mięsień sercowy nie jest w stanie pompować ilości krwi wystarczającej dla organizmu.
+Zapalenie zatok,Stan zapalny błony śluzowej zatok przynosowych wywołany infekcją lub alergią.
+Kamica nerkowa,Tworzenie się złogów mineralnych w drogach moczowych powodujących silne ataki bólowe.
+Atopowe zapalenie skóry,Przewlekła nawrotowa choroba alergiczna objawiająca się silnym świądem i zmianami skórnymi.
+Rak płuca,Nowotwór złośliwy wywodzący się z nabłonka oskrzeli lub pęcherzyków płucnych.
+Anemia,Stan w którym liczba czerwonych krwinek jest niewystarczająca do transportu tlenu.
+Zapalenie płuc,Ostra infekcja tkanki płucnej powodująca gromadzenie się płynu w pęcherzykach.
+Refluks żołądkowo-przełykowy,Zarzucanie treści żołądkowej do przełyku powodujące pieczenie i uszkodzenia śluzówki.
+Depresja,Zaburzenie nastroju charakteryzujące się długotrwałym smutkiem i utratą zainteresowań.
+Schizofrenia,Przewlekłe zaburzenie psychiczne wpływające na postrzeganie rzeczywistości i myślenie.
+Choroba Parkinsona,Choroba układu nerwowego objawiająca się drżeniem spoczynkowym i sztywnością mięśni.
+Mukowiscydoza,Choroba genetyczna wpływająca na produkcję nadmiernie gęstego śluzu w organizmie.
+Stwardnienie rozsiane,Choroba autoimmunologiczna atakująca osłonki nerwowe w mózgu i rdzeniu.
+Celiakia,Trwała nietolerancja glutenu prowadząca do zaniku kosmków jelitowych.
