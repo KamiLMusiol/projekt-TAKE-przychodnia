@@ -14,9 +14,20 @@ public class GeneratorDanychPrzedUruhomieniem implements CommandLineRunner {
         try {
         	
             // przygotowanie procesu (exe musi byc w glownym katalogu)
-            ProcessBuilder pb = new ProcessBuilder("plik_laczacy.exe");
+        	
+        	String os = System.getProperty("os.name").toLowerCase();
+            String executableName;
+
+           
+            if (os.contains("win")) {
+                executableName = "./plik_laczacy.exe"; //windows
+            } else {
+                //mac/linux
+                executableName = "./plik_laczacy";
+            }
+            ProcessBuilder pb = new ProcessBuilder(executableName);
             
-            // wypisywanie bledów z ptyhona na naszej konsoli jakby byly i inne napisy
+           
             pb.inheritIO(); 
 
             //start
