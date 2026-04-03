@@ -77,9 +77,13 @@ class GeneratorDanych:
         try:
             with open(dir_for_data, 'r', encoding='utf-8') as f:
                 for line in f:
-                    if ',' in line: #bo wcześniej caasem wykrywał pustą linie na końcu
-                        nazwa,opis = line.strip().split(',',1)
-                        lista_chorob.append({"nazwa": nazwa, "opis": opis})
+                    czesci = line.strip().split(',', 2)
+                    if len(czesci) == 3: #maja byc 3
+                        lista_chorob.append({
+                            "kodIcd10": czesci[0],
+                            "nazwa": czesci[1],
+                            "opis": czesci[2]
+                        })
             return lista_chorob
         except FileNotFoundError:
             print("Błąd: Nie znaleziono pliku/nie ma go")
@@ -104,6 +108,7 @@ class GeneratorDanych:
 
             wizyty.append({
                 "dataWizyty": self.fake.date_time_between(start_date="-1y", end_date="now").strftime('%Y-%m-%d'), #format który przyjmie JAVA NIE ZMIENIAĆ!!!!!!!
+                "nr_gabinetu": self.fake.random_int(min=1, max=300),
                 "zalecenia": "coś tam coś tam daj 100 zł masz lizaka widzimy się za dwa lata",
                 "lekarz": {"id": random.randint(1, max_lekarz_id)},
                 "pacjent": {"id": random.randint(1, max_pacjent_id)},

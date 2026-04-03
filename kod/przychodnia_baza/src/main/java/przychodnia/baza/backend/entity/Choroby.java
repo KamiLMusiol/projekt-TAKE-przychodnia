@@ -21,7 +21,8 @@ public class Choroby {
 	@Id
 	@GeneratedValue
     private Integer id;
-
+	
+	private String kodIcd10;
     private String nazwa;
     private String opis;
     

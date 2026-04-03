@@ -25,9 +25,10 @@ public class Wizyta {
 	@Id
 	@GeneratedValue
 	private Integer id;
-	
+	private Integer nr_gabinetu;
 	private LocalDate dataWizyty;
 	private String zalecenia;
+	private String status = "nieodbyty";
 	 
 	
 	@ManyToOne
@@ -45,11 +46,6 @@ public class Wizyta {
     
     
     @ManyToMany
-    @JoinTable(
-        name = "wizyta_choroba",
-        joinColumns = @JoinColumn(name = "wizyta_id"),
-        inverseJoinColumns = @JoinColumn(name = "choroba_id")
-    )
     private List<Choroby> choroby; // nie tylko jeden ale wiecej
 	
 }
