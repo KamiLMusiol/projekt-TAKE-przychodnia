@@ -48,7 +48,7 @@ public class LekarzController {
 	    return CollectionModel.of(lista);
 	}
 	
-	@GetMapping("/pobierz/{id}")
+	@GetMapping("/pobierz/{id}") 	
 	public LekarzDTO pobierzPoId(@PathVariable("id") Integer id) {
 	    Lekarz l = lekarzRepo.findById(id).orElseThrow(() -> new NoSuchElementException("Nie znaleziono lekarza o id: " + id));
 	    return new LekarzDTO(l);
@@ -60,13 +60,13 @@ public class LekarzController {
 	}
 
   @DeleteMapping("/usun/{id}")
-  public void usun(@PathVariable Integer id) 
+  public void usun(@PathVariable("id") Integer id) 
   {
   lekarzRepo.deleteById(id);
   }
   
   @PutMapping("/aktualizuj/{id}")
-  public Lekarz aktualizuj(@PathVariable Integer id, @RequestBody Lekarz nowyLekarz) {
+  public Lekarz aktualizuj(@PathVariable("id") Integer id, @RequestBody Lekarz nowyLekarz) {
       return lekarzRepo.findById(id).map(lekarz -> {
           lekarz.setImie(nowyLekarz.getImie());
           lekarz.setNazwisko(nowyLekarz.getNazwisko());
@@ -74,9 +74,19 @@ public class LekarzController {
           lekarz.setEmail(nowyLekarz.getEmail());
           lekarz.setSpecjalizacje(nowyLekarz.getSpecjalizacje());
           return lekarzRepo.save(lekarz);
-      }).orElse(null);
+      }).orElseThrow(() -> new NoSuchElementException("Nie znaleziono lekarza o id: " + id));
   }
 
+  
+  @PutMapping("/{id}/specjalizacje")
+  public Lekarz zmienSpecjalizacje(@PathVariable("id") Integer id,
+                                    @RequestBody List<Specjalizacja> specjalizacje) {
+      return lekarzRepo.findById(id).map(lekarz -> {
+          lekarz.setSpecjalizacje(specjalizacje);
+          return lekarzRepo.save(lekarz);
+      }).orElseThrow(() -> new NoSuchElementException("Nie znaleziono lekarza o id: " + id));
+  }
+  
   @GetMapping("/szukaj")
   public List<Lekarz> szukajPoNazwisku(@RequestParam("nazwisko") String nazwisko) {
       return lekarzRepo.findByNazwisko(nazwisko);

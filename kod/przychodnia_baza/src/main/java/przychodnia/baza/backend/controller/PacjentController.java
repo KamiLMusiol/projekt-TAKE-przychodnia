@@ -42,13 +42,13 @@ public class PacjentController {
 	 }
 
 	 @DeleteMapping("/usun/{id}")
-	    public void usun(@PathVariable Integer id) 
+	 public void usun(@PathVariable("id") Integer id)
 	    {
 	    	pacjentRepo.deleteById(id);
 	    }
 	 
 	 @PutMapping("/aktualizuj/{id}")
-	 public Pacjent aktualizuj(@PathVariable Integer id, @RequestBody Pacjent nowyPacjent) { // id z url, @request body to obiekt requestu jako JSON, automatycznie zamienaiany na obiekt w javie (PCJENT)
+	 public Pacjent aktualizuj(@PathVariable("id") Integer id, @RequestBody Pacjent nowyPacjent) { // id z url, @request body to obiekt requestu jako JSON, automatycznie zamienaiany na obiekt w javie (PCJENT)
 	     return pacjentRepo.findById(id).map(pacjent -> { //szuka po id i jezeli znajdzie (czyli .map) to  dla pacjenta wybranego wykonaj
 	         pacjent.setImie(nowyPacjent.getImie());
 	         pacjent.setNazwisko(nowyPacjent.getNazwisko());
@@ -60,6 +60,25 @@ public class PacjentController {
 	     }).orElseThrow(() -> new NoSuchElementException("Nie znaleziono pacjenta o id: " + id));
 	 }	
 	 
+	 
+	 @PutMapping("{id}/telefon")
+	 public Pacjent aktualizujTelefon(@PathVariable("id") Integer id, 
+	                                   @RequestParam("telefon") String telefon) {
+	     return pacjentRepo.findById(id).map(pacjent -> {
+	         pacjent.setNumerTelefonu(telefon);
+	         return pacjentRepo.save(pacjent);
+	     }).orElseThrow(() -> new NoSuchElementException("Nie znaleziono pacjenta o id: " + id));
+	 }
+	 
+	 
+	 @PutMapping("{id}/adres")
+	 public Pacjent aktualizujAdres(@PathVariable("id") Integer id, 
+	                                   @RequestParam("adres") String adres) {
+	     return pacjentRepo.findById(id).map(pacjent -> {
+	         pacjent.setAdres(adres);
+	         return pacjentRepo.save(pacjent);
+	     }).orElseThrow(() -> new NoSuchElementException("Nie znaleziono pacjenta o id: " + id));
+	 }
 	 
 	 @GetMapping("/szukaj")
 	 public List<Pacjent> szukajPoNazwisku(@RequestParam("nazwisko") String nazwisko) {

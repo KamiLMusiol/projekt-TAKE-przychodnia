@@ -40,7 +40,7 @@ public class WizytaController {
     }
 
     @DeleteMapping("/usun/{id}")
-    public void usun(@PathVariable Integer id) 
+    public void usun(@PathVariable("id") Integer id) 
     {
         wizytaRepo.deleteById(id);
     }
@@ -51,7 +51,7 @@ public class WizytaController {
         return new WizytaDTO(w);
     }
     @PutMapping("/aktualizuj/{id}")
-    public Wizyta aktualizuj(@PathVariable Integer id, @RequestBody Wizyta nowaWizyta) {
+    public Wizyta aktualizuj(@PathVariable("id") Integer id, @RequestBody Wizyta nowaWizyta) {
         return wizytaRepo.findById(id).map(wizyta -> {
             wizyta.setNr_gabinetu(nowaWizyta.getNr_gabinetu());
             wizyta.setDataWizyty(nowaWizyta.getDataWizyty());
@@ -65,6 +65,59 @@ public class WizytaController {
         
         
     
+    }
+    
+    @PutMapping("/{id}/status")
+    public Wizyta zmienStatus(@PathVariable("id") Integer id,
+                               @RequestParam("status") String status) {
+        return wizytaRepo.findById(id).map(wizyta -> {
+            wizyta.setStatus(status);
+            return wizytaRepo.save(wizyta);
+        }).orElseThrow(() -> new NoSuchElementException("Nie znaleziono wizyty o id: " + id));
+    }
+    @PutMapping("/{id}/dodajChorobe/{chorobaId}")
+    public Wizyta dodajChorobe(@PathVariable("id") Integer id,
+                                @PathVariable("chorobaId") Integer chorobaId) {
+        return wizytaRepo.findById(id).map(wizyta -> {
+            Choroby choroba = new Choroby();
+            choroba.setId(chorobaId);
+            wizyta.getChoroby().add(choroba);
+            return wizytaRepo.save(wizyta);
+        }).orElseThrow(() -> new NoSuchElementException("Nie znaleziono wizyty o id: " + id));
+    }
+    
+    @PutMapping("/{id}/aktualizujChoroby")
+    public Wizyta aktualizujChoroby(@PathVariable("id") Integer id,
+    						@RequestBody List<Choroby> choroby) {
+        return wizytaRepo.findById(id).map(wizyta -> {
+        	 wizyta.setChoroby(choroby);
+           
+            return wizytaRepo.save(wizyta);
+        }).orElseThrow(() -> new NoSuchElementException("Nie znaleziono wizyty o id: " + id));
+    }
+    
+    
+    
+    
+    @PutMapping("/{id}/lekarz/{lekarzId}")
+    public Wizyta zmienLekarza(@PathVariable("id") Integer id,
+                                @PathVariable("lekarzId") Integer lekarzId) {
+        return wizytaRepo.findById(id).map(wizyta -> {
+            Lekarz lekarz = new Lekarz();
+            lekarz.setId(lekarzId);
+            wizyta.setLekarz(lekarz);
+            return wizytaRepo.save(wizyta);
+        }).orElseThrow(() -> new NoSuchElementException("Nie znaleziono wizyty o id: " + id));
+    }
+    
+    
+    @PutMapping("/{id}/zalecenia")
+    public Wizyta zmienZalecenia(@PathVariable("id") Integer id,
+                                  @RequestParam("zalecenia") String zalecenia) {
+        return wizytaRepo.findById(id).map(wizyta -> {
+            wizyta.setZalecenia(zalecenia);
+            return wizytaRepo.save(wizyta);
+        }).orElseThrow(() -> new NoSuchElementException("Nie znaleziono wizyty o id: " + id));
     }
     
     @GetMapping("/{id}/lekarz")
